@@ -522,12 +522,9 @@
     <script>
         $("#submit-form").submit((e)=>{
             e.preventDefault();
-            // Regular expression for name validation (3 to 16 characters, letters only)
             var nameRegex = /^[a-zA-Z]{3,16}$/;
-            // Get the value of the name input field
             var nameValue = $("#cname").val().trim();
     
-            // Check if the name input matches the validation criteria
             if (nameValue.match(nameRegex)) {
                 $.ajax({
                     url:"https://script.google.com/macros/s/AKfycbwLOIcYDgPD1evykSq6FcZ_LHQllGBaDa9d7ETEU6nLeJW6AgL6tp2H-pzPL_mcUBFA/exec",
@@ -542,7 +539,6 @@
                     }
                 });
             } else {
-                // If the name input does not match the validation criteria, show an error message
                 alert("Please enter a valid name (3 to 16 characters, letters only)");
             }
         });
